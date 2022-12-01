@@ -131,7 +131,7 @@ class Application {
         const rs = hn
           ? response(hn.data, this._headers)
           : response(null, this._headers);
-        hn?.headers.forEach((v, k) => rs.headers.set(k, v));
+        hn?.headers?.forEach((v, k) => rs.headers.set(k, v));
 
         const e = performance.now();
         const d = e - s;
