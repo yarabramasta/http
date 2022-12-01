@@ -24,21 +24,22 @@ type _Props = {
  * Factory class for http server.
  *
  * ```ts
- * import { Application, register } from 'web_http';
+ * import { Application } from 'https://raw.githubusercontent.com/yarabramasta/http/master/mod.ts';
  *
- * const app = new Application(await register('./web/controllers'));
+ * const app = new Application([ProductController, UserController, ...]);
  * app.start();
  * ```
  *
- * If you prefer the manual way.
+ * If you prefer the manual way (like express).
  *
  * ```ts
- * import { Application } from 'web_http';
+ * import { Application } from 'https://raw.githubusercontent.com/yarabramasta/http/master/mod.ts';
  *
  * const app = new Application();
  * app.get('/', (req, res) => {
- *  // ...
+ *   // ...
  * });
+ *
  * app.start();
  * ```
  */
