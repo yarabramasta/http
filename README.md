@@ -1,6 +1,11 @@
 # http
 Me having fun with deno std/http.
 
+Server bootstrapper for building an API with deno std/http library.
+
+I'm not gonna add a support for web templating (obviously this library made for building API),
+maybe gonna add a support for multipart request later.
+
 # Example
 
 ## main.ts
@@ -14,13 +19,13 @@ import { Application } from 'https://raw.githubusercontent.com/yarabramasta/http
 const CONTROLLERS_PATH = resolve(Deno.cwd(), './controllers');
 const controllers = [];
 
-// read all ts files with suffix "_controller"
-// 'cause i'm too lazy to import it one by one :p
+// read all ts files with _controller suffix
+// too lazy to import it one by one :p
 for await (const file of Deno.readDir(CONTROLLERS_PATH)){
-  // readonly file type, if not a file type then continue reading
+  // read only file, if not a file (e.g a subdirectory) then continue reading
   if (!file.isFile) continue;
   
-  // readonly file with suffix, if without it then continue reading
+  // read only file with suffix, if without it then continue reading
   if (!/[a-zA-Z]+_controller\.ts/.test(file.name)) continue;
 
   // import all controllers module
