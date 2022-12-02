@@ -8,6 +8,32 @@ maybe gonna add a support for multipart request later.
 
 # Example
 
+Update your deno config ```deno.json``` and add ```tsconfig.json``` with below options:
+
+> deno.json
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
+}
+```
+
+> tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
+```
+
+> And then run it with
+```sh
+deno run --allow-all -c tsconfig.json main.ts
+```
+
 ## main.ts
 ```ts
 import 'https://deno.land/x/deno_reflect@v0.2.1/mod.ts';
